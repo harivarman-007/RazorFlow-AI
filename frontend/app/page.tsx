@@ -8,7 +8,6 @@ import { ReceiptPrinter } from "@/components/receipt-printer"
 import { CreateInvoiceModal } from "@/components/create-invoice-modal"
 import { SmartReminderModal } from "@/components/smart-reminder-modal"
 import { RazorpayModal } from "@/components/razorpay-modal"
-import { HoverRevealCard } from "@/components/hover-reveal-card"
 import { CollectionCadencePipeline } from "@/components/collection-cadence-pipeline"
 import { CashFlowForecastCard } from "@/components/cash-flow-forecast"
 import { BICopilot } from "@/components/bi-copilot"
@@ -169,63 +168,8 @@ export default function Home() {
           />
         </div>
 
-        <section className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
-            {/* Card 1: Smart Reminders */}
-            <div id="reminders" className="scroll-mt-24 w-full flex justify-center">
-              <HoverRevealCard
-                frontBadge="Reminders"
-                frontTitle="Tone-Adaptive Smart Reminders"
-                frontDescription="Analyzes debtor risk, relationship tenure, and invoice size to craft tailored recovery messages."
-                frontFooterLabel="Payment Reminders"
-                frontFooterNumber="01"
-                hoverBadge="How it works"
-                hoverTitle="Friendly to Urgent in 1-Click"
-                hoverDescription="Auto-dispatches tailored copy to WhatsApp, Email, and SMS with embedded Razorpay UPI links."
-                hoverFooterLabel="Click to Test Reminder"
-                hoverFooterNumber="02"
-                onAction={() => handleRemindInvoice(invoices[0])}
-              />
-            </div>
-
-            {/* Card 2: Razorpay Checkout */}
-            <div id="razorpay" className="scroll-mt-24 w-full flex justify-center">
-              <HoverRevealCard
-                frontBadge="Checkout"
-                frontTitle="Instant Razorpay Checkout & QR"
-                frontDescription="Generates Razorpay payment links, UPI deep intents, and scannable QR codes for instant collection."
-                frontFooterLabel="Payment Checkout"
-                frontFooterNumber="01"
-                hoverBadge="How it works"
-                hoverTitle="Real-Time Webhook Settlement"
-                hoverDescription="Customer scans via GPay/PhonePe; invoice instantly marks PAID and rolls out a receipt."
-                hoverFooterLabel="Click to Test Checkout"
-                hoverFooterNumber="02"
-                onAction={() => handlePayInvoice(invoices[0])}
-              />
-            </div>
-
-            {/* Card 3: Risk Scoring */}
-            <div id="risk-engine" className="scroll-mt-24 w-full flex justify-center">
-              <HoverRevealCard
-                frontBadge="Risk Scoring"
-                frontTitle="Payment Delay Risk Scoring"
-                frontDescription="Predicts the likelihood of late payment based on client history, industry, and invoice size."
-                frontFooterLabel="Risk Assessment"
-                frontFooterNumber="01"
-                hoverBadge="How it works"
-                hoverTitle="Feature-Weighted Scoring"
-                hoverDescription="Scored on industry volatility, amount scale, past delay days, and payment terms."
-                hoverFooterLabel="Create New Invoice"
-                hoverFooterNumber="02"
-                onAction={() => setIsCreateModalOpen(true)}
-              />
-            </div>
-          </div>
-        </section>
-
         {/* Autonomous Collection Auto-Pilot Command Center */}
-        <section className="w-full">
+        <section id="autopilot" className="scroll-mt-24 w-full">
           <AutonomousAutoPilotBanner />
         </section>
 

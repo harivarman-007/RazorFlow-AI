@@ -58,16 +58,17 @@ export function NotchNavbar({
 }: NotchNavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Navigation items for our site
+  // Navigation items for our site (equal 3 on left, 3 on right)
   const items = {
     left: [
-      { label: "Invoices", id: "invoices", icon: FileText },
-      { label: "Risk Engine", id: "risk-engine", icon: ShieldAlert },
-      { label: "Smart Reminders", id: "reminders", icon: Bell }
+      { label: "Overview", id: "overview", icon: FileText },
+      { label: "Auto-Pilot", id: "autopilot", icon: ShieldAlert },
+      { label: "Cadence", id: "collections", icon: Clock }
     ],
     right: [
-      { label: "Cadence", id: "collections", icon: Clock },
-      { label: "Cash Flow", id: "forecast", icon: TrendingUp }
+      { label: "Cash Flow", id: "forecast", icon: TrendingUp },
+      { label: "Invoices", id: "invoices", icon: FileText },
+      { label: "AI Copilot", id: "bi-copilot", icon: Sparkles }
     ]
   }
 
@@ -161,9 +162,6 @@ export function NotchNavbar({
                       <RazorFlowLogo className="w-4 h-4 text-white group-hover:scale-105 transition-transform shrink-0" />
                       <span className="font-semibold text-xs tracking-tight text-white flex items-center gap-1.5 whitespace-nowrap">
                         RazorFlow AI
-                        <span className="hidden xl:inline-flex items-center text-[9px] font-mono tracking-wider font-semibold px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 border border-white/10">
-                          AR PLATFORM
-                        </span>
                       </span>
                     </button>
                   )}
